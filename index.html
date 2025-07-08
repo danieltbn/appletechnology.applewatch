@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Précommande Chargeur Apple Watch</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0; padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: white;
+      max-width: 400px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      margin: 10px auto;
+      border-radius: 8px;
+    }
+    p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.4;
+    }
+    form {
+      margin-top: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #333;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #0070ba;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #005ea6;
+    }
+    .paypal-button {
+      margin-top: 15px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Précommande Chargeur Apple Watch</h1>
+    <img src="https://cdn.pixabay.com/photo/2017/06/19/22/05/apple-watch-2420044_1280.jpg" alt="Chargeur Apple Watch" />
+    <p>Chargeur magnétique ultra-compact pour Apple Watch. Emportez-le partout !</p>
+    <p><strong>Prix :</strong> 14€</p>
+    <p><em>Précommande avec livraison sous 2 semaines.</em></p>
+
+    <form id="preorderForm" action="mailto:daniel.tchobanian2000@gmail.com" method="post" enctype="text/plain">
+      <label for="name">Nom complet</label>
+      <input type="text" id="name" name="Nom" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="Email" required />
+
+      <label for="address">Adresse de livraison</label>
+      <textarea id="address" name="Adresse" rows="3" required></textarea>
+
+      <label for="quantity">Quantité</label>
+      <input type="number" id="quantity" name="Quantité" min="1" max="10" value="1" required />
+
+      <button type="submit">Envoyer la précommande</button>
+    </form>
+
+    <div class="paypal-button">
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick" />
+        <input type="hidden" name="business" value="daniel.tchobanian2000@gmail.com" />
+        <input type="hidden" name="item_name" value="Chargeur Apple Watch" />
+        <input type="hidden" name="amount" value="14.00" />
+        <input type="hidden" name="currency_code" value="EUR" />
+        <input type="submit" value="Payer avec PayPal" style="background:#0070ba; color:#fff; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;" />
+      </form>
+    </div>
+  </div>
+</body>
+</html>
